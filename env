@@ -1,2 +1,2 @@
-MONGODB_URL=mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
+MONGODB_URL=
 PORT=
