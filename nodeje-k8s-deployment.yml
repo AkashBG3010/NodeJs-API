@@ -6,7 +6,7 @@ metadata:
   namespace: default
   labels:
     app: nodejs-app
-specs:
+spec:
   replicas: 1
   selector:
     matchLabels:
