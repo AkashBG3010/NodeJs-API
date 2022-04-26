@@ -21,6 +21,7 @@ spec:
         image: akashbg3010/nodejs-api_app
         ports:
         - containerPort: 3000
+          name: app-port
       - name: mongo
         image: mongo
         ports:
@@ -34,9 +35,9 @@ metadata:
 spec:
   selector:
     app: nodejs-app
-  type: LoadBalancer
+  type: NodePort
   ports:
   - protocol: TCP
-    targetPort: 3000
     port: 80
+    targetPort: app-port
     
