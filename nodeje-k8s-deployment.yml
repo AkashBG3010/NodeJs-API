@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app-deployment
+  labels:
+    app: nodejs-app
+specs:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+      - name: nodejs-server
+        image: akashbg3010/nodejs-api_app
+        ports:
+        - containerPort: 3000
+      - name: mongo
+        image: mongo
+        ports:
+        - containerPort: 27017
